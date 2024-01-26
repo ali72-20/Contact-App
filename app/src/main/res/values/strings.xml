@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Kalmy</string>
+    <string name="kalmny">Kalmny</string>
+    <string name="name">Name</string>
+    <string name="enter_contact_name">Enter Contact name</string>
+    <string name="number">Number</string>
+    <string name="mail">Mail</string>
+    <string name="save">Save</string>
+</resources>
