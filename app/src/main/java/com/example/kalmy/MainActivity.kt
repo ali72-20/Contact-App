@@ -1,5 +1,6 @@
 package com.example.kalmy
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ReportFragment.Companion.reportFragment
@@ -16,11 +17,22 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         initRecView()
         putInRecycleView()
+
     }
 
-    private fun initRecView() {
+  fun initRecView() {
         adapter = ContactViewAdapter(contacList)
+      adapter.onContactClickListener = ContactViewAdapter.OnContactClickListener{name, number,postion->
+          startContactDetails(name,number,postion)
+      }
         binding.recViewContact.adapter = adapter
+    }
+
+    private fun startContactDetails(name:String,number: String,position : Int){
+        val intent = Intent(this,ContactDetailsActivity::class.java)
+        intent.putExtra(const.Name,name)
+        intent.putExtra(const.Number,number)
+        startActivity(intent)
     }
 
     private fun putInRecycleView() {
@@ -35,14 +47,10 @@ class MainActivity : AppCompatActivity() {
                 name = name,
                 number = number,
                 contactImage = R.drawable.contactimg,
-                contactNameImg = R.drawable.contact,
-                contactNumberImg = R.drawable.phonecall,
-                contactMailImg = R.drawable.email,
                 mail = mail
             )
             contacList.add(Contact)
             adapter.notifyItemInserted(contacList.size - 1)
-
         }
     }
 
