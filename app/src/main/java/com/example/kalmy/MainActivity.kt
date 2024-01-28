@@ -35,9 +35,6 @@ class MainActivity : AppCompatActivity() {
                 name = name,
                 number = number,
                 contactImage = R.drawable.contactimg,
-                contactNameImg = R.drawable.contact,
-                contactNumberImg = R.drawable.phonecall,
-                contactMailImg = R.drawable.email,
                 mail = mail
             )
             contacList.add(Contact)

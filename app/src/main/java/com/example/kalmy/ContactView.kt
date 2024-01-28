@@ -5,7 +5,4 @@ data class ContactView(
     var number : String,
     val mail : String,
     var contactImage:Int,
-    var contactNameImg:Int,
-    var contactNumberImg:Int,
-    var contactMailImg:Int
 )
